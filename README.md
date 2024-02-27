@@ -44,4 +44,23 @@ endpoint = '/api/v3/klines'
 * Use specific tools to make the process automated and fail-proof.
 
 **3) Tools used.**
+
 ![Screenshot 2024-02-27 145637](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/17572230-969c-4bd3-b74c-7a7232cda5cb)
+
+## Usage
+
+Airflow DAG is scheduled to run everyday at 00:30.
+
+Steps of execution:
+
+1. Airflow checks if the database is online (check_database_connection). If not, the process stops and we get a notification for the incident in Logging.
+
+If the DB is online,
+
+2. Airflow checks if the API is online and serves data (test_binance_connectivity). If not, the process stops and we get a notification for the incident in Logging.
+
+If the API is online and serves data, 
+
+3. Airflow checks if the database is empty (check_if_database_empty) and using BranchPythonOperator leads the workflow to the appropriate route.
+
+

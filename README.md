@@ -44,3 +44,4 @@ endpoint = '/api/v3/klines'
 * Use specific tools to make the process automated and fail-proof.
 
 **3) Tools used.**
+![Screenshot 2024-02-27 145637](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/17572230-969c-4bd3-b74c-7a7232cda5cb)

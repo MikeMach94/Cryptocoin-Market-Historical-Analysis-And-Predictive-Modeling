@@ -55,12 +55,52 @@ Steps of execution:
 
 1. Airflow checks if the database is online (check_database_connection). If not, the process stops and we get a notification for the incident in Logging.
 
-If the DB is online,
+If the database is online,
 
 2. Airflow checks if the API is online and serves data (test_binance_connectivity). If not, the process stops and we get a notification for the incident in Logging.
 
 If the API is online and serves data, 
 
-3. Airflow checks if the database is empty (check_if_database_empty) and using BranchPythonOperator leads the workflow to the appropriate route.
+3. Airflow checks if the database is empty (check_if_database_empty) and using BranchPythonOperator leads the workflow to the appropriate branch of the pipeline.
+
+If the database is empty,
+
+4. We are heading to the (populate_database_task) which does what it implies. The database is filled with data from 2017 up until the current date. This task is triggered in case the process runs for the first time or for some reason we decided to change the database that holds the data.
+
+If the database is not empty,
+
+6. We are heading to the other branch of the pipeline where we meet (extract_latest_timestamp). There as the title of the task impies, using Xcom we share the latest timestamp from our last database entry.
+
+Finaly,
+
+7. Using the latest timestamp from Xcom as a starting point (add_the_latest_data_task) fills up the database with the missing data up until the current date.
 
 
+
+
+
+
+
+
+
+
+
+## Airflow DAG Pipeline Description
+
+The Airflow DAG is scheduled to run every day at 00:30.
+
+### Steps of Execution:
+
+1. **Check Database Connection (`check_database_connection`):** Airflow initiates by verifying the availability of the database. If the database is offline, the process halts, and a notification is logged regarding the incident.
+
+2. **Check API Connectivity (`test_binance_connectivity`):** Following a successful database connection, Airflow proceeds to verify the availability and data serving capability of the API. If the API is inaccessible, the process halts, and a notification is logged.
+
+3. **Check Database Status (`check_if_database_empty`):** After confirming both database and API availability, Airflow evaluates if the database is empty. Utilizing the `BranchPythonOperator`, the workflow diverges based on the database status.
+
+    - If the database is empty:
+        - **Populate Database (`populate_database_task`):** This task populates the database with data ranging from 2017 to the current date. It triggers when the process runs for the first time or when a database switch occurs.
+
+    - If the database is not empty:
+        - **Extract Latest Timestamp (`extract_latest_timestamp`):** In this branch, the task retrieves the latest timestamp from the last database entry using `Xcom`.
+
+4. **Add Latest Data (`add_the_latest_data_task`):** Finally, leveraging the latest timestamp obtained from `Xcom` as a starting point, this task fills the database with missing data up to the current date.

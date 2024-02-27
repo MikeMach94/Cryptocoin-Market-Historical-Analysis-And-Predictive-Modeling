@@ -93,4 +93,41 @@ Then we connect metabase to the database. That way data can be visualized.
 
 ![Screenshot 2024-02-25 170002](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/cb0651ef-b5c8-4cf9-b1b0-11ef588c4680)
 
-## How to install
+## How to Install
+
+To set up this project on Ubuntu 22.04.3 LTS with Docker version 25.0.1 and Docker-compose version 1.29.2, follow these steps:
+
+1. **Clone the Repository:**
+   Copy the contents of this repository to your local machine.
+
+2. **Create a DockerHub Account:**
+   If you haven't already, create an account on DockerHub, which serves as the Docker image repository.
+
+3. **Set Up PostgresDB and pgAdmin:**
+   - Navigate to the `PostgresDB_pgAdmin` folder.
+   - Edit the `postgres.env` file to include your credentials.
+   - Run `docker-compose up -d` to create a Docker container with PostgresDB and a pgAdmin GUI.
+     You can customize the `docker-compose.yml` file according to your preferences.
+
+4. **Deploy Airflow:**
+   - Go to the `Airflow` folder.
+   - Execute `docker-compose up -d` to create all necessary containers for Airflow.
+     The DAG and essential project files are already included.
+   - Customize settings such as database name, host machine IP, and credentials in the config file found in the main branch and the `Airflow` folder.
+
+5. **Launch Metabase:**
+   - Access the `Metabase` folder.
+   - Run `docker-compose up -d`.
+   - Connect Metabase to the database using your credentials.
+
+6. **Configure Airflow Connections:**
+   - In the Airflow GUI, navigate to Admin > Connections.
+   - Set up a Postgres connection using the database created earlier. This step is necessary for the PostgresOperator to function properly.
+
+Please note that while this guide provides an overview of the setup process, detailed documentation for each component and step is available within the respective files. For example, the DAG file provides comprehensive documentation regarding its functionality and usage.
+
+For any inquiries or assistance, feel free to contact me via LinkedIn.
+
+## License
+
+You are welcome to utilize any part of this project for your own endeavors. If you find it helpful, I would highly appreciate to mention me using my linkedin profile.

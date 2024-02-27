@@ -75,6 +75,18 @@ As a result the database is filled with the data necessary for the research.
 
 ![Screenshot 2024-02-25 165803](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/be53a3bf-4abe-4e4d-b5a4-22356a324066)
 
+## About Our Data
+
+* 10 Crypto Coins
+* 2 Currencies
+* 1 Day Intervals
+* Daily Data Update
+* Data Range (2017-Current Date)
+* Open/Close Time
+* Open/Close Price
+* Trade Volume
+* Trade Count 
+
 Then we connect metabase to the database. That way data can be visualized.
 
 ![Screenshot 2024-02-25 165951](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/b1695f9a-c9f9-4716-a134-98175a8612ee)

@@ -18,3 +18,28 @@ This project is a comprehensive endeavor aimed at contributing to the ongoing re
 * Data have to be available to analysts and researchers in a specific, given form.
 
 * Ability to visualize data in the form of questions.
+
+## Solution Approach
+
+* Appropriate data collection out of a reliable source.
+  
+* Structure the implementation plan.
+  
+* Choose the tools that will be used.
+
+*1)* Source of data
+
+APIs used:
+
+base_url = 'https://api.binance.com'
+endpoint = '/api/v3/klines'
+
+*2)* Implementation plan.
+
+1)Build a database to store data.
+
+2)Create a script that will call the APIs, fetch data, manipulate and transform data to meet the assignee’s criteria and store them into the database.
+
+3)Use specific tools to make the process automated and fail-proof.
+
+*3)* Tools used.

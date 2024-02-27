@@ -27,7 +27,7 @@ This project is a comprehensive endeavor aimed at contributing to the ongoing re
   
 * Choose the tools that will be used.
 
-**1)** Source of data
+**1) Source of data** 
 
 APIs used:
 
@@ -35,7 +35,7 @@ base_url = 'https://api.binance.com'
 
 endpoint = '/api/v3/klines'
 
-**2)** Implementation plan.
+**2) Implementation plan.** 
 
 * Build a database to store data.
 
@@ -43,4 +43,4 @@ endpoint = '/api/v3/klines'
 
 * Use specific tools to make the process automated and fail-proof.
 
-**3)** Tools used.
+**3) Tools used.**

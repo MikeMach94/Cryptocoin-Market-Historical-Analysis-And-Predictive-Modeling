@@ -100,6 +100,10 @@ Then we connect metabase to the database. That way data can be visualized.
 
 ![Screenshot 2024-02-25 170002](https://github.com/MikeMach94/Cryptocoin-Market-Historical-Analysis-And-Predictive-Modeling/assets/125815367/cb0651ef-b5c8-4cf9-b1b0-11ef588c4680)
 
+## Project Presentation
+
+You can also watch the project's presentation [here](https://www.youtube.com/watch?v=2uezZ7XT98Q&t=533s&ab_channel=BigBlueDataAcademy).
+
 ## How to Install
 
 To set up this project on Ubuntu 22.04.3 LTS with Docker version 25.0.1 and Docker-compose version 1.29.2, follow these steps:
